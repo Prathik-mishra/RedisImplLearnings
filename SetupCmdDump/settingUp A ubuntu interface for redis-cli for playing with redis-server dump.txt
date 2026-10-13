@@ -1,0 +1,348 @@
+C:\Users\PrathikMishra>docker run -it ubuntu:latest
+Unable to find image 'ubuntu:latest' locally
+latest: Pulling from library/ubuntu
+06ad70e463aa: Pull complete
+4e07a0f12b2c: Pull complete
+8f70d2bfe91a: Download complete
+Digest: sha256:f144425ff09be612d6d9ad965196e9cdc23dae1f42110a8a11a3e9a8198759f7
+Status: Downloaded newer image for ubuntu:latest
+root@ed8408a32cbf:/# apt update
+Get:1 http://archive.ubuntu.com/ubuntu resolute InRelease [136 kB]
+Get:2 http://security.ubuntu.com/ubuntu resolute-security InRelease [137 kB]
+Get:3 http://archive.ubuntu.com/ubuntu resolute-updates InRelease [137 kB]
+Get:4 http://security.ubuntu.com/ubuntu resolute-security/universe amd64 Packages [250 kB]
+Get:5 http://archive.ubuntu.com/ubuntu resolute-backports InRelease [137 kB]
+Get:6 http://archive.ubuntu.com/ubuntu resolute/main amd64 Packages [1874 kB]
+Get:7 http://security.ubuntu.com/ubuntu resolute-security/main amd64 Packages [736 kB]
+Get:8 http://security.ubuntu.com/ubuntu resolute-security/restricted amd64 Packages [584 kB]
+Get:9 http://archive.ubuntu.com/ubuntu resolute/restricted amd64 Packages [189 kB]
+Get:10 http://security.ubuntu.com/ubuntu resolute-security/multiverse amd64 Packages [13.6 kB]
+Get:11 http://archive.ubuntu.com/ubuntu resolute/multiverse amd64 Packages [352 kB]
+Get:12 http://archive.ubuntu.com/ubuntu resolute/universe amd64 Packages [20.1 MB]
+Get:13 http://archive.ubuntu.com/ubuntu resolute-updates/main amd64 Packages [906 kB]
+Get:14 http://archive.ubuntu.com/ubuntu resolute-updates/universe amd64 Packages [409 kB]
+Get:15 http://archive.ubuntu.com/ubuntu resolute-updates/restricted amd64 Packages [625 kB]
+Get:16 http://archive.ubuntu.com/ubuntu resolute-updates/multiverse amd64 Packages [26.1 kB]
+Get:17 http://archive.ubuntu.com/ubuntu resolute-backports/universe amd64 Packages [3308 B]
+Fetched 26.6 MB in 5s (5515 kB/s)
+2 packages can be upgraded. Run 'apt list --upgradable' to see them.
+root@ed8408a32cbf:/# apt install redis-tools -y
+Installing:
+  redis-tools
+
+Installing dependencies:
+  adduser  libatomic1  libjemalloc2  liblzf1
+
+Suggested packages:
+  liblocale-gettext-perl  perl  cron  quota  ecryptfs-utils  ruby-redis
+
+Summary:
+  Upgrading: 0, Installing: 5, Removing: 0, Not Upgrading: 2
+  Download size: 1836 kB
+  Space needed: 8677 kB / 1008 GB available
+
+Get:1 http://archive.ubuntu.com/ubuntu resolute/main amd64 adduser all 3.153ubuntu1 [194 kB]
+Get:2 http://archive.ubuntu.com/ubuntu resolute/main amd64 libatomic1 amd64 16-20260322-1ubuntu1 [11.4 kB]
+Get:3 http://archive.ubuntu.com/ubuntu resolute/main amd64 libjemalloc2 amd64 5.3.0-4 [263 kB]
+Get:4 http://archive.ubuntu.com/ubuntu resolute/universe amd64 liblzf1 amd64 3.6-4build1 [7490 B]
+Get:5 http://archive.ubuntu.com/ubuntu resolute-updates/universe amd64 redis-tools amd64 5:8.0.5-1ubuntu0.1 [1359 kB]
+Fetched 1836 kB in 2s (986 kB/s)
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 79, <STDIN> line 5.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC entries checked: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.40.1 /usr/local/share/perl/5.40.1 /usr/lib/x86_64-linux-gnu/perl5/5.40 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl-base /usr/lib/x86_64-linux-gnu/perl/5.40 /usr/share/perl/5.40 /usr/local/lib/site_perl) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 8, <STDIN> line 5.)
+debconf: falling back to frontend: Teletype
+Selecting previously unselected package adduser.
+(Reading database ... 7789 files and directories currently installed.)
+Preparing to unpack .../adduser_3.153ubuntu1_all.deb ...
+Unpacking adduser (3.153ubuntu1) ...
+Setting up adduser (3.153ubuntu1) ...
+Selecting previously unselected package libatomic1:amd64.
+(Reading database ... 7873 files and directories currently installed.)
+Preparing to unpack .../libatomic1_16-20260322-1ubuntu1_amd64.deb ...
+Unpacking libatomic1:amd64 (16-20260322-1ubuntu1) ...
+Selecting previously unselected package libjemalloc2:amd64.
+Preparing to unpack .../libjemalloc2_5.3.0-4_amd64.deb ...
+Unpacking libjemalloc2:amd64 (5.3.0-4) ...
+Selecting previously unselected package liblzf1:amd64.
+Preparing to unpack .../liblzf1_3.6-4build1_amd64.deb ...
+Unpacking liblzf1:amd64 (3.6-4build1) ...
+Selecting previously unselected package redis-tools.
+Preparing to unpack .../redis-tools_5%3a8.0.5-1ubuntu0.1_amd64.deb ...
+Unpacking redis-tools (5:8.0.5-1ubuntu0.1) ...
+Setting up libjemalloc2:amd64 (5.3.0-4) ...
+Setting up liblzf1:amd64 (3.6-4build1) ...
+Setting up libatomic1:amd64 (16-20260322-1ubuntu1) ...
+Setting up redis-tools (5:8.0.5-1ubuntu0.1) ...
+Processing triggers for libc-bin (2.43-2ubuntu2.4) ...
+root@ed8408a32cbf:/# redis-cli -h localhost -p 6379 -- tls
+Unrecognized option or bad number of args for: '--'
+root@ed8408a32cbf:/# redis-cli -h localhost -p 6379 --tls
+Could not connect to Redis at localhost:6379: Connection refused
+not connected> redis-cli -h localhost:6379 -- tcp
+Could not connect to Redis at localhost:6379: Connection refused
+not connected>
+What's next:
+    Debug this container error with Gordon → docker ai "help me fix this container error"
+
+C:\Users\PrathikMishra>docker run -it -p 3000 ubuntu:latest
+root@63f229ad0b19:/# ^C
+root@63f229ad0b19:/# ^C
+root@63f229ad0b19:/# ^C
+root@63f229ad0b19:/# ^C
+root@63f229ad0b19:/# ^C
+root@63f229ad0b19:/# exit
+exit
+
+What's next:
+    Debug this container error with Gordon → docker ai "help me fix this container error"
+
+C:\Users\PrathikMishra>docker run -it -p 3000:3000 ubuntu:latest
+root@c480fb52e952:/# sudo apt update
+bash: sudo: command not found
+root@c480fb52e952:/# apt update
+Get:1 http://archive.ubuntu.com/ubuntu resolute InRelease [136 kB]
+Get:2 http://security.ubuntu.com/ubuntu resolute-security InRelease [137 kB]
+Get:3 http://archive.ubuntu.com/ubuntu resolute-updates InRelease [137 kB]
+Get:4 http://security.ubuntu.com/ubuntu resolute-security/restricted amd64 Packages [609 kB]
+Get:5 http://archive.ubuntu.com/ubuntu resolute-backports InRelease [137 kB]
+Get:6 http://archive.ubuntu.com/ubuntu resolute/universe amd64 Packages [20.1 MB]
+Get:7 http://security.ubuntu.com/ubuntu resolute-security/universe amd64 Packages [252 kB]
+Get:8 http://security.ubuntu.com/ubuntu resolute-security/multiverse amd64 Packages [24.6 kB]
+Get:9 http://security.ubuntu.com/ubuntu resolute-security/main amd64 Packages [737 kB]
+Get:10 http://archive.ubuntu.com/ubuntu resolute/multiverse amd64 Packages [352 kB]
+Get:11 http://archive.ubuntu.com/ubuntu resolute/main amd64 Packages [1874 kB]
+Get:12 http://archive.ubuntu.com/ubuntu resolute/restricted amd64 Packages [189 kB]
+Get:13 http://archive.ubuntu.com/ubuntu resolute-updates/main amd64 Packages [907 kB]
+Get:14 http://archive.ubuntu.com/ubuntu resolute-updates/universe amd64 Packages [409 kB]
+Get:15 http://archive.ubuntu.com/ubuntu resolute-updates/restricted amd64 Packages [625 kB]
+Get:16 http://archive.ubuntu.com/ubuntu resolute-updates/multiverse amd64 Packages [26.1 kB]
+Get:17 http://archive.ubuntu.com/ubuntu resolute-backports/universe amd64 Packages [3308 B]
+Fetched 26.7 MB in 6s (4217 kB/s)
+2 packages can be upgraded. Run 'apt list --upgradable' to see them.
+root@c480fb52e952:/# apt install redis-tools -y
+Installing:
+  redis-tools
+
+Installing dependencies:
+  adduser  libatomic1  libjemalloc2  liblzf1
+
+Suggested packages:
+  liblocale-gettext-perl  perl  cron  quota  ecryptfs-utils  ruby-redis
+
+Summary:
+  Upgrading: 0, Installing: 5, Removing: 0, Not Upgrading: 2
+  Download size: 1836 kB
+  Space needed: 8677 kB / 1009 GB available
+
+Get:1 http://archive.ubuntu.com/ubuntu resolute/main amd64 adduser all 3.153ubuntu1 [194 kB]
+Get:2 http://archive.ubuntu.com/ubuntu resolute/main amd64 libatomic1 amd64 16-20260322-1ubuntu1 [11.4 kB]
+Get:3 http://archive.ubuntu.com/ubuntu resolute/main amd64 libjemalloc2 amd64 5.3.0-4 [263 kB]
+Get:4 http://archive.ubuntu.com/ubuntu resolute/universe amd64 liblzf1 amd64 3.6-4build1 [7490 B]
+Get:5 http://archive.ubuntu.com/ubuntu resolute-updates/universe amd64 redis-tools amd64 5:8.0.5-1ubuntu0.1 [1359 kB]
+Fetched 1836 kB in 12s (151 kB/s)
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 79, <STDIN> line 5.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC entries checked: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.40.1 /usr/local/share/perl/5.40.1 /usr/lib/x86_64-linux-gnu/perl5/5.40 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl-base /usr/lib/x86_64-linux-gnu/perl/5.40 /usr/share/perl/5.40 /usr/local/lib/site_perl) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 8, <STDIN> line 5.)
+debconf: falling back to frontend: Teletype
+Selecting previously unselected package adduser.
+(Reading database ... 7789 files and directories currently installed.)
+Preparing to unpack .../adduser_3.153ubuntu1_all.deb ...
+Unpacking adduser (3.153ubuntu1) ...
+Setting up adduser (3.153ubuntu1) ...
+Selecting previously unselected package libatomic1:amd64.
+(Reading database ... 7873 files and directories currently installed.)
+Preparing to unpack .../libatomic1_16-20260322-1ubuntu1_amd64.deb ...
+Unpacking libatomic1:amd64 (16-20260322-1ubuntu1) ...
+Selecting previously unselected package libjemalloc2:amd64.
+Preparing to unpack .../libjemalloc2_5.3.0-4_amd64.deb ...
+Unpacking libjemalloc2:amd64 (5.3.0-4) ...
+Selecting previously unselected package liblzf1:amd64.
+Preparing to unpack .../liblzf1_3.6-4build1_amd64.deb ...
+Unpacking liblzf1:amd64 (3.6-4build1) ...
+Selecting previously unselected package redis-tools.
+Preparing to unpack .../redis-tools_5%3a8.0.5-1ubuntu0.1_amd64.deb ...
+Unpacking redis-tools (5:8.0.5-1ubuntu0.1) ...
+Setting up libjemalloc2:amd64 (5.3.0-4) ...
+Setting up liblzf1:amd64 (3.6-4build1) ...
+Setting up libatomic1:amd64 (16-20260322-1ubuntu1) ...
+Setting up redis-tools (5:8.0.5-1ubuntu0.1) ...
+Processing triggers for libc-bin (2.43-2ubuntu2.4) ...
+root@c480fb52e952:/# redis-cli -h locallost -p 6379 -- tls
+Unrecognized option or bad number of args for: '--'
+root@c480fb52e952:/# redis-cli -h locallost -p 6379 --tls
+Could not connect to Redis at locallost:6379: No address associated with hostname
+not connected>
+root@c480fb52e952:/# redis-cli -h 1.1.1.1 -p 6379 --tls
+Could not connect to Redis at 1.1.1.1:6379: Connection refused
+not connected>
+root@c480fb52e952:/# redis-cli -h 0.0.0.0 -p 6379 --tls
+Could not connect to Redis at 0.0.0.0:6379: Connection refused
+not connected>
+root@c480fb52e952:/# redis-cli -h localhost -p 6379
+Could not connect to Redis at localhost:6379: Connection refused
+not connected>
+root@c480fb52e952:/# exit
+exit
+
+C:\Users\PrathikMishra>docker run -it --name redis-client --network redis-network ubuntu:latest
+root@5c957b3bca6c:/# apt update
+Get:1 http://archive.ubuntu.com/ubuntu resolute InRelease [136 kB]
+Get:2 http://security.ubuntu.com/ubuntu resolute-security InRelease [137 kB]
+Get:3 http://archive.ubuntu.com/ubuntu resolute-updates InRelease [137 kB]
+Get:4 http://security.ubuntu.com/ubuntu resolute-security/main amd64 Packages [737 kB]
+Get:5 http://archive.ubuntu.com/ubuntu resolute-backports InRelease [137 kB]
+Get:6 http://archive.ubuntu.com/ubuntu resolute/universe amd64 Packages [20.1 MB]
+Get:7 http://security.ubuntu.com/ubuntu resolute-security/multiverse amd64 Packages [24.6 kB]
+Get:8 http://security.ubuntu.com/ubuntu resolute-security/restricted amd64 Packages [609 kB]
+Get:9 http://security.ubuntu.com/ubuntu resolute-security/universe amd64 Packages [252 kB]
+Get:10 http://archive.ubuntu.com/ubuntu resolute/restricted amd64 Packages [189 kB]
+Get:11 http://archive.ubuntu.com/ubuntu resolute/main amd64 Packages [1874 kB]
+Get:12 http://archive.ubuntu.com/ubuntu resolute/multiverse amd64 Packages [352 kB]
+Get:13 http://archive.ubuntu.com/ubuntu resolute-updates/universe amd64 Packages [409 kB]
+Get:14 http://archive.ubuntu.com/ubuntu resolute-updates/main amd64 Packages [907 kB]
+Get:15 http://archive.ubuntu.com/ubuntu resolute-updates/multiverse amd64 Packages [26.1 kB]
+Get:16 http://archive.ubuntu.com/ubuntu resolute-updates/restricted amd64 Packages [625 kB]
+Get:17 http://archive.ubuntu.com/ubuntu resolute-backports/universe amd64 Packages [3308 B]
+Fetched 26.7 MB in 5s (4960 kB/s)
+2 packages can be upgraded. Run 'apt list --upgradable' to see them.
+root@5c957b3bca6c:/# apt install redis-tools -y
+Installing:
+  redis-tools
+
+Installing dependencies:
+  adduser  libatomic1  libjemalloc2  liblzf1
+
+Suggested packages:
+  liblocale-gettext-perl  perl  cron  quota  ecryptfs-utils  ruby-redis
+
+Summary:
+  Upgrading: 0, Installing: 5, Removing: 0, Not Upgrading: 2
+  Download size: 1836 kB
+  Space needed: 8677 kB / 1009 GB available
+
+Get:1 http://archive.ubuntu.com/ubuntu resolute/main amd64 adduser all 3.153ubuntu1 [194 kB]
+Get:2 http://archive.ubuntu.com/ubuntu resolute/main amd64 libatomic1 amd64 16-20260322-1ubuntu1 [11.4 kB]
+Get:3 http://archive.ubuntu.com/ubuntu resolute/main amd64 libjemalloc2 amd64 5.3.0-4 [263 kB]
+Get:4 http://archive.ubuntu.com/ubuntu resolute/universe amd64 liblzf1 amd64 3.6-4build1 [7490 B]
+Get:5 http://archive.ubuntu.com/ubuntu resolute-updates/universe amd64 redis-tools amd64 5:8.0.5-1ubuntu0.1 [1359 kB]
+Fetched 1836 kB in 2s (961 kB/s)
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 79, <STDIN> line 5.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC entries checked: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.40.1 /usr/local/share/perl/5.40.1 /usr/lib/x86_64-linux-gnu/perl5/5.40 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl-base /usr/lib/x86_64-linux-gnu/perl/5.40 /usr/share/perl/5.40 /usr/local/lib/site_perl) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 8, <STDIN> line 5.)
+debconf: falling back to frontend: Teletype
+Selecting previously unselected package adduser.
+(Reading database ... 7789 files and directories currently installed.)
+Preparing to unpack .../adduser_3.153ubuntu1_all.deb ...
+Unpacking adduser (3.153ubuntu1) ...
+Setting up adduser (3.153ubuntu1) ...
+Selecting previously unselected package libatomic1:amd64.
+(Reading database ... 7873 files and directories currently installed.)
+Preparing to unpack .../libatomic1_16-20260322-1ubuntu1_amd64.deb ...
+Unpacking libatomic1:amd64 (16-20260322-1ubuntu1) ...
+Selecting previously unselected package libjemalloc2:amd64.
+Preparing to unpack .../libjemalloc2_5.3.0-4_amd64.deb ...
+Unpacking libjemalloc2:amd64 (5.3.0-4) ...
+Selecting previously unselected package liblzf1:amd64.
+Preparing to unpack .../liblzf1_3.6-4build1_amd64.deb ...
+Unpacking liblzf1:amd64 (3.6-4build1) ...
+Selecting previously unselected package redis-tools.
+Preparing to unpack .../redis-tools_5%3a8.0.5-1ubuntu0.1_amd64.deb ...
+Unpacking redis-tools (5:8.0.5-1ubuntu0.1) ...
+Setting up libjemalloc2:amd64 (5.3.0-4) ...
+Setting up liblzf1:amd64 (3.6-4build1) ...
+Setting up libatomic1:amd64 (16-20260322-1ubuntu1) ...
+Setting up redis-tools (5:8.0.5-1ubuntu0.1) ...
+Processing triggers for libc-bin (2.43-2ubuntu2.4) ...
+root@5c957b3bca6c:/# redis-cli -h localhost -p 6397
+Could not connect to Redis at localhost:6397: Connection refused
+not connected>
+root@5c957b3bca6c:/# redis-cli -h localhost -p 6379
+Could not connect to Redis at localhost:6379: Connection refused
+not connected>
+root@5c957b3bca6c:/# redis-cli -h my-redis -p 6379
+my-redis:6379> dbsize
+(integer) 0
+my-redis:6379> ping
+PONG
+my-redis:6379> stat
+(error) ERR unknown command 'stat', with args beginning with:
+my-redis:6379> scan *
+(error) ERR invalid cursor
+my-redis:6379> select *
+(error) ERR value is not an integer or out of range
+my-redis:6379> scan 0 count 20
+1) "0"
+2) (empty array)
+my-redis:6379> set name "prathik"
+OK
+my-redis:6379> ping
+Error: Broken pipe
+not connected>
+root@5c957b3bca6c:/# redis-cli -h my-redis -p 6379
+my-redis:6379> pong
+(error) ERR unknown command 'pong', with args beginning with:
+my-redis:6379> ping
+PONG
+my-redis:6379> set name "prathik"
+OK
+my-redis:6379> get name
+"prathik"
+my-redis:6379> set name "sai"
+OK
+my-redis:6379> get name
+"sai"
+my-redis:6379> exists name
+(integer) 1
+my-redis:6379> select 1
+OK
+my-redis:6379[1]> dbsize
+(integer) 0
+my-redis:6379[1]> select 2
+OK
+my-redis:6379[2]> dbsize
+(integer) 0
+my-redis:6379[2]> select 1
+OK
+my-redis:6379[1]> select 3
+OK
+my-redis:6379[3]> set user:1 "prathik: EX 30
+Invalid argument(s)
+my-redis:6379[3]> SET user:1 "Prathik" EX 30
+OK
+my-redis:6379[3]> dbsize
+(integer) 1
+my-redis:6379[3]> scan o count 1
+(error) ERR invalid cursor
+my-redis:6379[3]> scan 0 count 20
+1) "0"
+2) 1) "user:1"
+my-redis:6379[3]> get user:1
+(nil)
+my-redis:6379[3]> scan 0 count 20
+1) "0"
+2) (empty array)
+my-redis:6379[3]> SET user:1 "Prathik" EX 30
+OK
+my-redis:6379[3]> TTL user:1
+(integer) 23
+my-redis:6379[3]> TTL user:1
+(integer) 21
+my-redis:6379[3]> TTL user:1
+(integer) 20
+my-redis:6379[3]> TTL user:1
+(integer) 19
+my-redis:6379[3]> TTL user:1
+(integer) 19
+my-redis:6379[3]> TTL user:1
+(integer) 18
+my-redis:6379[3]> TTL user:1
+(integer) 18
+my-redis:6379[3]> TTL user:1
+(integer) 17
+my-redis:6379[3]>

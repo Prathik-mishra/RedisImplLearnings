@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "dotenv": "^18.0.6",
+    "redis": "^6.3.0"
+  },
+  "name": "RedisHome",
+  "version": "1.0.0",
+  "description": "redisClusterSetup",
+  "main": "index.js",
+  "author": "Prathik Mishra",
+  "license": "MIT"
+}

@@ -1,0 +1,163 @@
+Microsoft Windows [Version 10.0.26200.9457]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\PrathikMishra>docker run --name my-redis -p 6379:6379 redis:7
+Unable to find image 'redis:7' locally
+7: Pulling from library/redis
+88b125c05b23: Pull complete
+6988465984f0: Pull complete
+7fd1ebe418b5: Pull complete
+ec5b838b30d5: Pull complete
+c1162fec059b: Pull complete
+faaaf6ba362b: Pull complete
+4f4fb700ef54: Pull complete
+db062982bd98: Download complete
+7f940e7da078: Download complete
+Digest: sha256:4fa24486b8bcca8eec45ee0eb166edc674795e53a2b53d1a9ef263eecebaac85
+Status: Downloaded newer image for redis:7
+1:C 08 Oct 2026 06:06:21.526 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 08 Oct 2026 06:06:21.526 * Redis version=7.4.11, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 08 Oct 2026 06:06:21.526 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+1:M 08 Oct 2026 06:06:21.527 * monotonic clock: POSIX clock_gettime
+1:M 08 Oct 2026 06:06:21.528 * Running mode=standalone, port=6379.
+1:M 08 Oct 2026 06:06:21.529 * Server initialized
+1:M 08 Oct 2026 06:06:21.529 * Ready to accept connections tcp
+1:signal-handler (1791451662) Received SIGINT scheduling shutdown...
+1:M 08 Oct 2026 09:27:43.061 * User requested shutdown...
+1:M 08 Oct 2026 09:27:43.061 * Saving the final RDB snapshot before exiting.
+1:M 08 Oct 2026 09:27:43.078 * DB saved on disk
+1:M 08 Oct 2026 09:27:43.079 # Redis is now ready to exit, bye bye...
+
+C:\Users\PrathikMishra>docker run --name my-redis -p 6379:6379 redis:7
+docker: Error response from daemon: Conflict. The container name "/my-redis" is already in use by container "c695a083dfba2ebcaaedc460d9617c612cbb280c7b094139ea72d1a59e8c8206". You have to remove (or rename) that container to be able to reuse that name.
+
+Run 'docker run --help' for more information
+
+What's next:
+    Debug this container error with Gordon → docker ai "help me fix this container error"
+
+C:\Users\PrathikMishra>docker run --name my-redis -p 6379:6379 redis:7
+docker: Error response from daemon: Conflict. The container name "/my-redis" is already in use by container "c695a083dfba2ebcaaedc460d9617c612cbb280c7b094139ea72d1a59e8c8206". You have to remove (or rename) that container to be able to reuse that name.
+
+Run 'docker run --help' for more information
+
+What's next:
+    Debug this container error with Gordon → docker ai "help me fix this container error"
+
+C:\Users\PrathikMishra>docker run --name my-redis1 -p 6379:6379 redis:7
+1:C 08 Oct 2026 12:41:12.823 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 08 Oct 2026 12:41:12.823 * Redis version=7.4.11, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 08 Oct 2026 12:41:12.823 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+1:M 08 Oct 2026 12:41:12.824 * monotonic clock: POSIX clock_gettime
+1:M 08 Oct 2026 12:41:12.826 * Running mode=standalone, port=6379.
+1:M 08 Oct 2026 12:41:12.827 * Server initialized
+1:M 08 Oct 2026 12:41:12.828 * Ready to accept connections tcp
+1:signal-handler (1791539718) Received SIGINT scheduling shutdown...
+1:M 09 Oct 2026 09:55:18.437 * User requested shutdown...
+1:M 09 Oct 2026 09:55:18.449 * Saving the final RDB snapshot before exiting.
+1:M 09 Oct 2026 09:55:18.493 * DB saved on disk
+1:M 09 Oct 2026 09:55:18.496 # Redis is now ready to exit, bye bye...
+
+C:\Users\PrathikMishra>docker run --name my-redis1 -p 6379:6379 redis:7
+docker: Error response from daemon: Conflict. The container name "/my-redis1" is already in use by container "698e4f06d1bb973189aa8b813409a81e663770bf46c9132d0e924ca1c2a2f4d4". You have to remove (or rename) that container to be able to reuse that name.
+
+Run 'docker run --help' for more information
+
+What's next:
+    Debug this container error with Gordon → docker ai "help me fix this container error"
+
+C:\Users\PrathikMishra>docker run --name my-redis1 -p 6379:6379 redis:7
+1:C 09 Oct 2026 09:56:31.851 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 09 Oct 2026 09:56:31.851 * Redis version=7.4.11, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 09 Oct 2026 09:56:31.851 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+1:M 09 Oct 2026 09:56:31.851 * monotonic clock: POSIX clock_gettime
+1:M 09 Oct 2026 09:56:31.853 * Running mode=standalone, port=6379.
+1:M 09 Oct 2026 09:56:31.854 * Server initialized
+1:M 09 Oct 2026 09:56:31.854 * Ready to accept connections tcp
+1:M 09 Oct 2026 09:58:47.849 # Possible SECURITY ATTACK detected. It looks like somebody is sending POST or Host: commands to Redis. This is likely due to an attacker attempting to use Cross Protocol Scripting to compromise your Redis instance. Connection from 172.17.0.1:49582 aborted.
+1:signal-handler (1791540785) Received SIGINT scheduling shutdown...
+1:M 09 Oct 2026 10:13:05.536 * User requested shutdown...
+1:M 09 Oct 2026 10:13:05.536 * Saving the final RDB snapshot before exiting.
+1:M 09 Oct 2026 10:13:05.552 * DB saved on disk
+1:M 09 Oct 2026 10:13:05.552 # Redis is now ready to exit, bye bye...
+
+C:\Users\PrathikMishra>docker run -d \
+docker: invalid reference format
+
+Run 'docker run --help' for more information
+
+What's next:
+    Debug this container error with Gordon → docker ai "help me fix this container error"
+
+C:\Users\PrathikMishra>docker run -d \ --name my-redis \ --network redis-network \ redis:7
+docker: invalid reference format
+
+Run 'docker run --help' for more information
+
+What's next:
+    Debug this container error with Gordon → docker ai "help me fix this container error"
+
+C:\Users\PrathikMishra>docker run -d \
+docker: invalid reference format
+
+Run 'docker run --help' for more information
+
+What's next:
+    Debug this container error with Gordon → docker ai "help me fix this container error"
+
+C:\Users\PrathikMishra>  --name my-redis \
+'--name' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\PrathikMishra>  --network redis-network \
+'--network' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\PrathikMishra>docker run -d --name my-redis --network redis-network redis:7
+a7239bde30becc6680edd04f003e3cbd9aaa2a6d67e36961dd187aff2f6a8662
+docker: Error response from daemon: failed to set up container networking: network redis-network not found
+
+Run 'docker run --help' for more information
+
+What's next:
+    Debug this container error with Gordon → docker ai "help me fix this container error"
+
+C:\Users\PrathikMishra>docker network create redis-network
+1fe6ea837996e72188d6455e5fb0e23dfc1096cd98d7ad42671ba4494e5fbde2
+
+C:\Users\PrathikMishra>docker run -d --name my-redis --network redis-network redis:7
+docker: Error response from daemon: Conflict. The container name "/my-redis" is already in use by container "a7239bde30becc6680edd04f003e3cbd9aaa2a6d67e36961dd187aff2f6a8662". You have to remove (or rename) that container to be able to reuse that name.
+
+Run 'docker run --help' for more information
+
+What's next:
+    Debug this container error with Gordon → docker ai "help me fix this container error"
+
+C:\Users\PrathikMishra>docker run -d --name my-redis --network redis-network redis:7
+204148444c8422482d3cf591253791f753414c105cc6b3df2998f1a27a5f5cda
+
+C:\Users\PrathikMishra>docker run -it --name my-redis --network redis-network redis:7
+1:C 09 Oct 2026 10:30:56.322 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 09 Oct 2026 10:30:56.322 * Redis version=7.4.11, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 09 Oct 2026 10:30:56.322 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+1:M 09 Oct 2026 10:30:56.323 * monotonic clock: POSIX clock_gettime
+                _._
+           _.-``__ ''-._
+      _.-``    `.  `_.  ''-._           Redis Community Edition
+  .-`` .-```.  ```\/    _.,_ ''-._     7.4.11 (00000000/0) 64 bit
+ (    '      ,       .-`  | `,    )     Running in standalone mode
+ |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
+ |    `-._   `._    /     _.-'    |     PID: 1
+  `-._    `-._  `-./  _.-'    _.-'
+ |`-._`-._    `-.__.-'    _.-'_.-'|
+ |    `-._`-._        _.-'_.-'    |           https://redis.io
+  `-._    `-._`-.__.-'_.-'    _.-'
+ |`-._`-._    `-.__.-'    _.-'_.-'|
+ |    `-._`-._        _.-'_.-'    |
+  `-._    `-._`-.__.-'_.-'    _.-'
+      `-._    `-.__.-'    _.-'
+          `-._        _.-'
+              `-.__.-'
+
+1:M 09 Oct 2026 10:30:56.325 * Server initialized
+1:M 09 Oct 2026 10:30:56.325 * Ready to accept connections tcp
